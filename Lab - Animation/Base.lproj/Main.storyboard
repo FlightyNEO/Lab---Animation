@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,130 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab___Animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="472-9b-ARL">
+                                <rect key="frame" x="20" y="44" width="374" height="374"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="472-9b-ARL" secondAttribute="height" id="lt3-lI-fm0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lt-rn-ywq" customClass="RewindButton" customModule="Lab___Animation" customModuleProvider="target">
+                                <rect key="frame" x="344" y="438" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9vx-0p-KuU"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ucq-YC-JiL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="following"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MJG-Pr-2uF" appends="YES" id="kbx-uN-oRk"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="qec-P1-CIW" customClass="RewindButton" customModule="Lab___Animation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="438" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="w1l-1b-xYx"/>
+                                    <constraint firstAttribute="height" constant="50" id="xYG-ti-kgY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="previous"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KDu-gF-KPN" appends="YES" id="WAD-XU-tGN"/>
+                                </connections>
+                            </view>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-PS-tch" customClass="PauseButton" customModule="Lab___Animation" customModuleProvider="target">
+                                <rect key="frame" x="182" y="438" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="D3Q-6Z-Lam"/>
+                                    <constraint firstAttribute="width" constant="50" id="O0K-0C-O4r"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="play"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ajC-7r-nMM" appends="YES" id="amV-Ad-2Q5"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.0" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="nlO-Fx-e7u" customClass="PauseButton" customModule="Lab___Animation" customModuleProvider="target">
+                                <rect key="frame" x="182" y="438" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jNQ-DH-dXS"/>
+                                    <constraint firstAttribute="width" constant="50" id="tnZ-8v-k4m"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="pause"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="q9X-rd-oJk" appends="YES" id="5Ql-ff-yGI"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="472-9b-ARL" secondAttribute="trailing" constant="20" id="0MU-TP-esR"/>
+                            <constraint firstItem="nlO-Fx-e7u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3gX-jm-rjs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5lt-rn-ywq" secondAttribute="trailing" constant="20" id="4eh-4b-4LX"/>
+                            <constraint firstItem="nlO-Fx-e7u" firstAttribute="top" secondItem="472-9b-ARL" secondAttribute="bottom" constant="20" id="DYe-GF-zcg"/>
+                            <constraint firstItem="qec-P1-CIW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OxV-m6-Cwo"/>
+                            <constraint firstItem="472-9b-ARL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WWl-aD-GN2"/>
+                            <constraint firstItem="5lt-rn-ywq" firstAttribute="top" secondItem="472-9b-ARL" secondAttribute="bottom" constant="20" id="Z5c-NO-omr"/>
+                            <constraint firstItem="qec-P1-CIW" firstAttribute="top" secondItem="472-9b-ARL" secondAttribute="bottom" constant="20" id="b2I-J0-l9s"/>
+                            <constraint firstItem="472-9b-ARL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="f8H-oh-NHY"/>
+                            <constraint firstItem="U9U-PS-tch" firstAttribute="top" secondItem="472-9b-ARL" secondAttribute="bottom" constant="20" id="pY1-Ok-BQD"/>
+                            <constraint firstItem="U9U-PS-tch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="woy-1A-MGr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="followingButton" destination="5lt-rn-ywq" id="bRp-Nc-OzC"/>
+                        <outlet property="pauseButton" destination="nlO-Fx-e7u" id="xb6-T5-o81"/>
+                        <outlet property="playButton" destination="U9U-PS-tch" id="hxF-aO-Rvf"/>
+                        <outlet property="previousButton" destination="qec-P1-CIW" id="hXA-eE-vMN"/>
+                        <outlet property="squareView" destination="472-9b-ARL" id="O6F-st-hBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ajC-7r-nMM" userLabel="Tap Play Gesture Recognizer">
+                    <connections>
+                        <action selector="actionPlay:" destination="BYZ-38-t0r" id="WsG-If-ZlQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="KDu-gF-KPN" userLabel="Tap Previous Gesture Recognizer">
+                    <connections>
+                        <action selector="actionPrevious:" destination="BYZ-38-t0r" id="Oya-aj-L7o"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="MJG-Pr-2uF" userLabel="Tap Following Gesture Recognizer">
+                    <connections>
+                        <action selector="actionFollowing:" destination="BYZ-38-t0r" id="RCE-XP-fvM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="q9X-rd-oJk" userLabel="Tap Pause Gesture Recognizer">
+                    <connections>
+                        <action selector="actionPause:" destination="BYZ-38-t0r" id="p3R-aV-o6f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>
