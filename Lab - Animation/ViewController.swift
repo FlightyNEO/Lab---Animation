@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
 }
 
+// MARK: - Actions
 extension ViewController {
     
     @IBAction func actionPlay(_ sender: UITapGestureRecognizer) {
@@ -33,6 +34,9 @@ extension ViewController {
         guard !isPlayingAnimation else { return }
         
         isPlayingAnimation = true
+        
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
         
         let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeOut) {
             self.playButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -55,6 +59,7 @@ extension ViewController {
                 }
                 animator2.addCompletion{ position in
                     if case .end = position {
+                        generator.notificationOccurred(.success)
                         self.isPlayingAnimation = false
                     }
                 }
@@ -75,6 +80,9 @@ extension ViewController {
         guard !isPlayingAnimation else { return }
         
         isPlayingAnimation = true
+        
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
         
         let animator = UIViewPropertyAnimator(duration: 0.2, curve: .easeOut) {
             self.pauseButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -97,6 +105,7 @@ extension ViewController {
                 }
                 animator2.addCompletion{ position in
                     if case .end = position {
+                        generator.notificationOccurred(.success)
                         self.isPlayingAnimation = false
                     }
                 }
@@ -117,6 +126,9 @@ extension ViewController {
         
         isPlayingAnimation = true
         
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
+        
         if isPause {
             
             UIView.animate(withDuration: 0.3, delay: 0, options: .autoreverse, animations: {
@@ -132,6 +144,7 @@ extension ViewController {
                 self.previousButton.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 self.squareView.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 
+                generator.impactOccurred()
                 self.isPlayingAnimation = false
             }
             
@@ -150,6 +163,7 @@ extension ViewController {
                 self.previousButton.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 self.squareView.transform = self.squareView.transform.rotated(by: 3 * .pi / 20)
                 
+                generator.impactOccurred()
                 self.isPlayingAnimation = false
             }
             
@@ -162,6 +176,9 @@ extension ViewController {
         guard !isPlayingAnimation else { return }
         
         self.isPlayingAnimation = true
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
         
         if isPause {
             
@@ -178,6 +195,7 @@ extension ViewController {
                 self.followingButton.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 self.squareView.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 
+                generator.impactOccurred()
                 self.isPlayingAnimation = false
             }
             
@@ -196,6 +214,7 @@ extension ViewController {
                 self.followingButton.layer.transform = CATransform3DMakeRotation(0, 0, 0, 0)
                 self.squareView.transform = self.squareView.transform.rotated(by: -.pi / 10)
                 
+                generator.impactOccurred()
                 self.isPlayingAnimation = false
             }
             
